@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item src="./test.glb" id="test"></a-asset-item>
+        </a-assets>
+
+
+        <a-sky color="skyblue"></a-sky>
+        <a-camera position="0 1 5">
+            <a-light type="ambient"></a-light>
+            <a-light type="point" position="0 3 3" intensity="1.0" target="#ground"></a-light>
+            <a-light type="directional" position="0 3 3" intensity="1.0" target="#ground"></a-light>
+            <a-light type="directional" position="-120 -100 -3" intensity="2.0" target="#ground"></a-light>
+            <a-light type="directional" position="120 -100 -3" intensity="2.0" target="#ground"></a-light>
+        </a-camera>
+
+
+        <a-gltf-model src="#test" id="ground"></a-gltf-model>
+    </a-scene>
+</body>
+
+</html>
